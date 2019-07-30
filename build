@@ -44,14 +44,14 @@ case $build_type in
     build $LOCAL_PREFIX
   ;;
   "--zip-file"*)
-      build "/tmp"
-      dest=$PWD
-      cd $TMP_DIR || exit
-      zip -rq $dest/$UUID.zip .
-      if [ -d $TMP_DIR ]; then
-        rm -rf $TMP_DIR
-      fi
-      cd $dest
+    build "/tmp"
+    dest=$PWD
+    cd $TMP_DIR || exit
+    zip -rq $dest/$UUID.zip .
+    if [ -d $TMP_DIR ]; then
+      rm -rf $TMP_DIR
+    fi
+    cd $dest
   ;;
 esac
 if [ -d "$PWD/$BUILD_DIR" ]; then
